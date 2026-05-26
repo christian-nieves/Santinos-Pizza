@@ -50,5 +50,8 @@ public class Pizza {
         this.toppings = toppings;
     }
 
+    // Methods
+
+    }
 
 }
