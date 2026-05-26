@@ -17,4 +17,9 @@ public class Topping {
         this.name = name;
     }
 
+    // Method
+    public abstract double getPrice(int toppingAmount);
+
+
+
 }
