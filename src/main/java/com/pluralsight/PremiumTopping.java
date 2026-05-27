@@ -28,4 +28,9 @@ public class PremiumTopping extends Topping {
         this.extraTopping = extraTopping;
     }
 
+    // Method
+    @Override
+    public double getPrice(int toppingAmount) {
+        return 0;
+    }
 }
