@@ -1,7 +1,7 @@
 package com.pluralsight;
 
-public class Cheese extends PremiumTopping {
-    public Cheese(String name, String cheeseOrMeat, boolean extraTopping) {
+public class Meat extends PremiumTopping {
+    public Meat(String name, String cheeseOrMeat, boolean extraTopping) {
         super(name, cheeseOrMeat, extraTopping);
     }
 
@@ -12,14 +12,14 @@ public class Cheese extends PremiumTopping {
         double extraPrice = 0;
 
         if (toppingAmount == 8) {
-            basePrice = 0.75;
-            extraPrice = 0.30;
+            basePrice = 1.00;
+            extraPrice = 0.50;
         } else if (toppingAmount == 12) {
-            basePrice = 1.50;
-            extraPrice = 0.60;
+            basePrice = 2.00;
+            extraPrice = 1.00;
         } else if (toppingAmount == 16) {
-            basePrice = 2.25;
-            extraPrice = 0.90;
+            basePrice = 3.00;
+            extraPrice = 1.50;
         }
 
         if (isExtraTopping()) {
