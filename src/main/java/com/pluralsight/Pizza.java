@@ -51,7 +51,42 @@ public class Pizza {
     }
 
     // Methods
+    public void addTopping (Topping topping) {
+        toppings.add(topping);
+    }
 
+    public double getPrice() {
+        double total = 0;
+
+        // pizza price based on size
+        if (size.equalsIgnoreCase("personal")) {
+            total = 8.50;
+        } else if (size.equalsIgnoreCase("medium")) {
+            total = 12.00;
+        } else if (size.equalsIgnoreCase("large")) {
+            total = 16.50;
+        }
+
+        // add topping prices based on size
+        int toppingAmount = 0;
+        if (size.equalsIgnoreCase("personal")) {
+            toppingAmount = 8;
+        } else if (size.equalsIgnoreCase("medium")) {
+            toppingAmount = 12;
+        } else if (size.equalsIgnoreCase("large")) {
+            toppingAmount = 16;
+        }
+
+        for (Topping topping : toppings) {
+            total += topping.getPrice(toppingAmount);
+        }
+
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        return "Size: " + size + "\nCrust: " + crust + "\nStuffed Crust: " + stuffedCrust + "\nToppings: " + toppings;
     }
 
 }
