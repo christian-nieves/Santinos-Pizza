@@ -1,30 +1,25 @@
 package com.pluralsight;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.time.format.DateTimeFormatter;
 
 public class ReceiptWriter {
-    private String receiptsFolder;
-
-    // Constructor
-    public ReceiptWriter(String receiptsFolder) {
-        this.receiptsFolder = "receipts/";
-    }
-
-    // Getter
-    public String getReceiptsFolder() {
-        return receiptsFolder;
-    }
 
     // Method
     public void saveOrder(Order order) {
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
-            String fileName = receiptsFolder + order.getOrderDate().format(formatter) + ".txt";
+            File folder = new File("receipts"); // create receipts folder if it doesn't exist
+
+            if (!folder.exists()) {
+                folder.mkdir();
+            }
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+            String fileName = "receipts/" + order.getOrderDate().format(formatter) + ".txt";
 
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
-
             bufferedWriter.write("Order Date: " + order.getOrderDate());
             bufferedWriter.newLine();
 
@@ -58,14 +53,14 @@ public class ReceiptWriter {
 
             bufferedWriter.write("Total: $" + order.getTotal());
             bufferedWriter.newLine();
-
             bufferedWriter.close();
-            System.out.println("Receipt Successfully Saved!");
+
+            System.out.println("Receipt Saved Successfully!");
 
         } catch (Exception e) {
-            System.err.println("An error has occurred. Please try again");
+            System.err.println("An error occurred. Please try again.");
         }
-    }
+
 }
 
 
