@@ -20,7 +20,7 @@ public class ReceiptWriter {
     // Method
     public void saveOrder(Order order) {
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
             String fileName = receiptsFolder + order.getOrderDate().format(formatter) + ".txt";
 
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
