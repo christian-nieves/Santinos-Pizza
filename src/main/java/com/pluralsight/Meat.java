@@ -11,6 +11,7 @@ public class Meat extends PremiumTopping {
         double basePrice = 0;
         double extraPrice = 0;
 
+        // price of meat depending on pizza size
         if (toppingAmount == 8) {
             basePrice = 1.00;
             extraPrice = 0.50;
@@ -23,7 +24,7 @@ public class Meat extends PremiumTopping {
         }
 
         if (isExtraTopping()) {
-            return basePrice + extraPrice;
+            return basePrice + extraPrice; // extra charge if user wants extra meat
         } else {
             return basePrice;
         }

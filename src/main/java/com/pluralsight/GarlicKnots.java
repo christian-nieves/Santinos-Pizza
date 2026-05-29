@@ -5,7 +5,7 @@ public class GarlicKnots {
 
     // Constructor
     public GarlicKnots() {
-        this.price = 1.50;
+        this.price = 1.50; // garlic knots are always $1.50
     }
 
     // Getter

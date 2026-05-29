@@ -14,7 +14,7 @@ public class Pizza {
         this.size = size;
         this.crust = crust;
         this.stuffedCrust = stuffedCrust;
-        this.toppings = new ArrayList<>();
+        this.toppings = new ArrayList<>(); // makes topping list
     }
 
     // Getters and Setters
@@ -52,7 +52,7 @@ public class Pizza {
 
     // Methods
     public void addTopping (Topping topping) {
-        toppings.add(topping);
+        toppings.add(topping); // adds topping to toppings list
     }
 
     public double getPrice() {
@@ -60,7 +60,6 @@ public class Pizza {
 
         // pizza price based on size
         double total = 0;
-
         if (size.equalsIgnoreCase("small")) {
             total = 8.50;
         } else if (size.equalsIgnoreCase("medium")) {
@@ -71,7 +70,6 @@ public class Pizza {
 
         // add topping prices based on size
         int toppingAmount = 0;
-
         if (size.equalsIgnoreCase("small")) {
             toppingAmount = 8;
         } else if (size.equalsIgnoreCase("medium")) {
@@ -80,6 +78,7 @@ public class Pizza {
             toppingAmount = 16;
         }
 
+        // adds each topping price to total price
         for (Topping topping : toppings) {
             total += topping.getPrice(toppingAmount);
         }

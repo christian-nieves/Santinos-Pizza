@@ -28,7 +28,7 @@ public class PremiumTopping extends Topping {
         this.extraTopping = extraTopping;
     }
 
-    // Method
+    // Method: gets meat or cheese price
     @Override
     public double getPrice(int toppingAmount) {
         return 0;

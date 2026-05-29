@@ -11,7 +11,6 @@ public class Drink {
     }
 
     // Getter and Setters
-
     public String getSize() {
         return size;
     }
@@ -29,19 +28,18 @@ public class Drink {
     }
 
     // Methods
-
     public double getPrice() {
 
         if (size.equalsIgnoreCase("small")) {
-            return 2.00;
+            return 2.00; // small drink price
         }
 
         else if (size.equalsIgnoreCase("medium")) {
-            return 2.50;
+            return 2.50; // medium drink price
         }
 
         else if (size.equalsIgnoreCase("large")) {
-            return 3.00;
+            return 3.00; // large drink price
         }
 
         else { System.err.println("Invalid drink size, please try again.");

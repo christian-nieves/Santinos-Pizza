@@ -12,10 +12,10 @@ public class Order {
 
     // Constructor
     public Order() {
-        this.pizzas = new ArrayList<>();
-        this.drinks = new ArrayList<>();
-        this.garlicKnots = new ArrayList<>();
-        this.orderDate = LocalDateTime.now();
+        this.pizzas = new ArrayList<>(); // makes pizzas list
+        this.drinks = new ArrayList<>(); // makes drinks list
+        this.garlicKnots = new ArrayList<>(); // makes garlic knots list
+        this.orderDate = LocalDateTime.now(); // stores current time for when order is complete
     }
 
     // Getters
@@ -37,28 +37,28 @@ public class Order {
 
     // Methods
     public void addPizza(Pizza pizza) {
-        pizzas.add(pizza);
+        pizzas.add(pizza); // adds pizza to order
     }
 
     public void addDrink(Drink drink) {
-        drinks.add(drink);
+        drinks.add(drink); // adds drink to order
     }
 
     public void addGarlicKnots(GarlicKnots garlicKnots1) {
-        garlicKnots.add(garlicKnots1);
+        garlicKnots.add(garlicKnots1); // adds garlic knots to order
     }
 
     public double getTotal() {
         double total = 0;
 
         for (Pizza pizza : pizzas) {
-            total += pizza.getPrice();
+            total += pizza.getPrice(); // adds each pizza price to total
         }
         for (Drink drink : drinks) {
-            total += drink.getPrice();
+            total += drink.getPrice(); // adds each  drink price to total
         }
         for (GarlicKnots garlicKnot : garlicKnots) {
-            total += garlicKnot.getPrice();
+            total += garlicKnot.getPrice(); // adds each garlic knots price to total
         }
         return total;
     }
@@ -67,15 +67,15 @@ public class Order {
     public String toString() {
         String orderResult =  "Order Date: " + orderDate;
 
-        if (!pizzas.isEmpty()) {
+        if (!pizzas.isEmpty()) { // only shows pizzas if there are any
             orderResult += "\nPizzas: " + pizzas;
         }
 
-        if (!drinks.isEmpty()) {
+        if (!drinks.isEmpty()) { // only shows drinks if there are any
             orderResult += "\nDrinks: " + drinks;
         }
 
-        if (!garlicKnots.isEmpty()) {
+        if (!garlicKnots.isEmpty()) { // only shows garlic knots if there are any
             orderResult += "\nGarlic Knots: " + garlicKnots;
         }
 

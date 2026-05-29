@@ -10,16 +10,16 @@ public class ReceiptWriter {
     // Method
     public void saveOrder(Order order) {
         try {
-            File folder = new File("receipts"); // create receipts folder if it doesn't exist
+            File folder = new File("receipts"); // stores folder to know where to place files
 
             if (!folder.exists()) {
-                folder.mkdir();
+                folder.mkdir(); // creates receipts folder if it doesn't exist
             }
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
-            String fileName = "receipts/" + order.getOrderDate().format(formatter) + ".txt";
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"); // formats date and time
+            String fileName = "receipts/" + order.getOrderDate().format(formatter) + ".txt"; // names files by date and time
 
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName)); // writes in new file
 
             bufferedWriter.write("╔════════════════════════════════════╗");
             bufferedWriter.newLine();
@@ -50,7 +50,7 @@ public class ReceiptWriter {
                 bufferedWriter.write("  Toppings:");
                 bufferedWriter.newLine();
                 for (Topping topping : pizza.getToppings()) {
-                    bufferedWriter.write("    - " + topping.getName());
+                    bufferedWriter.write("    - " + topping.getName()); // writes each topping on their own line
                     bufferedWriter.newLine();
                 }
 
@@ -87,7 +87,7 @@ public class ReceiptWriter {
             bufferedWriter.write("======================================");
             bufferedWriter.newLine();
 
-            bufferedWriter.write(String.format("  TOTAL:        $%.2f", order.getTotal()));
+            bufferedWriter.write(String.format("  TOTAL:        $%.2f", order.getTotal())); // formats price to show two decimals
             bufferedWriter.newLine();
 
             bufferedWriter.write("======================================");
@@ -99,11 +99,11 @@ public class ReceiptWriter {
             bufferedWriter.write("======================================");
             bufferedWriter.newLine();
 
-            bufferedWriter.close();
-            System.out.println("Receipt Saved Successfully!");
+            bufferedWriter.close(); // closes write
+            System.out.println("Receipt Saved Successfully!"); // tells user all went well
 
         } catch (Exception e) {
-            System.err.println("An error occurred. Please try again.");
+            System.err.println("An error occurred. Please try again."); // prints error in red alerting user that something went wrong
         }
     }
 

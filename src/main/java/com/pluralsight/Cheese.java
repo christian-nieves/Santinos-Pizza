@@ -11,6 +11,7 @@ public class Cheese extends PremiumTopping {
         double basePrice = 0;
         double extraPrice = 0;
 
+        // price of cheese depending on pizza size
         if (toppingAmount == 8) {
             basePrice = 0.75;
             extraPrice = 0.30;
@@ -23,7 +24,7 @@ public class Cheese extends PremiumTopping {
         }
 
         if (isExtraTopping()) {
-            return basePrice + extraPrice;
+            return basePrice + extraPrice; // extra charge if user wants extra cheese
         } else {
             return basePrice;
         }

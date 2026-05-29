@@ -17,7 +17,7 @@ public abstract class Topping {
         this.name = name;
     }
 
-    // Method
+    // Abstract Method: Each subclass will have its own price
     public abstract double getPrice(int toppingAmount);
 
     @Override
