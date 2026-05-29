@@ -341,25 +341,34 @@ public class UserInterface {
             return;
         }
 
-        System.out.println("---------- Checkout ----------");
-        System.out.println("Pizzas: ");
-        for (Pizza pizza : order.getPizzas()) {
-            System.out.println(pizza.toString());
-        }
-        if (!order.getDrinks().isEmpty()) {
-            System.out.println("Drinks: ");
-            for (Drink drink : order.getDrinks()) {
-                System.out.println(drink.toString());
-            }
-        }
-        if (!order.getGarlicKnots().isEmpty()) {
-            System.out.println("Garlic Knots: ");
-            for (GarlicKnots knot : order.getGarlicKnots()) {
-                System.out.println(knot.toString());
+        System.out.println(GREEN + "========== Checkout ==========" + RESET);
+
+        // Pizzas
+        if (!order.getPizzas().isEmpty()) {
+            for (Pizza pizza : order.getPizzas()) {
+                System.out.println(pizza.toString());
             }
         }
 
-        System.out.println("Total: $" + order.getTotal());
+        // Drinks
+        if (!order.getDrinks().isEmpty()) {
+            if (order.getDrinks().size() == 1) {
+                System.out.println("Drink: " + order.getDrinks().get(0).getFlavor());
+            } else {
+                System.out.print("Drinks: ");
+                for (Drink drink : order.getDrinks()) {
+                    System.out.print(drink.getFlavor() + " ");
+                }
+                System.out.println();
+            }
+        }
+
+        // Garlic Knots
+        if (!order.getGarlicKnots().isEmpty()) {
+            System.out.println("Garlic Knots x" + order.getGarlicKnots().size());
+        }
+
+        System.out.printf("Total: $%.2f%n", order.getTotal());
 
         System.out.println("1) Confirm");
         System.out.println("0) Cancel");
