@@ -53,10 +53,10 @@ public class UserInterface {
                     selectPizzaScreen();
                     break;
                 case "2":
-
+                    addDrink();
                     break;
                 case "3":
-
+                    addGarlicKnots();
                     break;
                 case "4":
 
@@ -322,6 +322,50 @@ public class UserInterface {
         order.addGarlicKnots(new GarlicKnots());
         System.out.println("Garlic Knots added successfully!");
     }
+
+    public void checkOutScreen() {
+        // confirm order
+        if (order.getPizzas().isEmpty() && order.getDrinks().isEmpty() && order.getGarlicKnots().isEmpty()) {
+            System.err.println("You must order at least one item to check out");
+            return;
+        }
+
+        System.out.println("---------- Checkout ----------");
+        System.out.println("Pizzas: ");
+        for (Pizza pizza : order.getPizzas()) {
+            System.out.println(pizza.toString());
+        }
+        if (!order.getDrinks().isEmpty()) {
+            System.out.println("Drinks: ");
+            for (Drink drink : order.getDrinks()) {
+                System.out.println(drink.toString());
+            }
+        }
+        if (!order.getGarlicKnots().isEmpty()) {
+            System.out.println("Garlic Knots: ");
+            for (GarlicKnots knot : order.getGarlicKnots()) {
+                System.out.println(knot.toString());
+            }
+        }
+
+        System.out.println("Total: $" + order.getTotal());
+
+        System.out.println("1) Confirm");
+        System.out.println("0) Cancel");
+        System.out.print("Enter your choice: ");
+        String choice = scanner.nextLine();
+
+        if (choice.equals("1")) {
+            ReceiptWriter receiptWriter = new ReceiptWriter();
+            receiptWriter.saveOrder(order);
+            System.out.println("Thank you for your order!");
+        } else if (choice.equals("0")) {
+            System.out.println("Order cancelled.");
+        } else {
+            System.err.println("Invalid option. Please try again.");
+        }
+    }
+
 }
 
 
