@@ -122,7 +122,7 @@ public class UserInterface {
                 crust = "cauliflower";
                 break;
             } else {
-                System.err.println("Invalid choice. Please try again.");
+                System.err.println("Invalid option. Please try again.");
             }
         }
 
@@ -143,6 +143,7 @@ public class UserInterface {
         while (addingMeats) {
             System.out.print("Enter your choice (0 when done): ");
             String choice = scanner.nextLine();
+
             switch (choice) {
                 case "1": pizza.addTopping(new Meat("pepperoni", false)); break;
                 case "2": pizza.addTopping(new Meat("sausage", false)); break;
@@ -151,7 +152,7 @@ public class UserInterface {
                 case "5": pizza.addTopping(new Meat("chicken", false)); break;
                 case "6": pizza.addTopping(new Meat("meatball", false)); break;
                 case "0": addingMeats = false; break;
-                default: System.err.println("Invalid choice. Please try again.");
+                default: System.err.println("Invalid option. Please try again.");
             }
         }
 
@@ -168,6 +169,7 @@ public class UserInterface {
         while (addingCheese) {
             System.out.print("Enter your choice (0 when done): ");
             String choice = scanner.nextLine();
+
             switch (choice) {
                 case "1": pizza.addTopping(new Cheese("mozzarella", false)); break;
                 case "2": pizza.addTopping(new Cheese("parmesan", false)); break;
@@ -175,7 +177,7 @@ public class UserInterface {
                 case "4": pizza.addTopping(new Cheese("goat cheese", false)); break;
                 case "5": pizza.addTopping(new Cheese("buffalo", false)); break;
                 case "0": addingCheese = false; break;
-                default: System.err.println("Invalid choice. Please try again.");
+                default: System.err.println("Invalid option. Please try again.");
             }
         }
 
@@ -196,6 +198,7 @@ public class UserInterface {
         while (addingToppings) {
             System.out.print("Enter your choice (0 when done): ");
             String choice = scanner.nextLine();
+
             switch (choice) {
                 case "1": pizza.addTopping(new RegularTopping("onions")); break;
                 case "2": pizza.addTopping(new RegularTopping("mushrooms")); break;
@@ -207,7 +210,7 @@ public class UserInterface {
                 case "8": pizza.addTopping(new RegularTopping("pineapple")); break;
                 case "9": pizza.addTopping(new RegularTopping("anchovies")); break;
                 case "0": addingToppings = false; break;
-                default: System.err.println("Invalid choice. Please try again.");
+                default: System.err.println("Invalid option. Please try again.");
             }
         }
 
@@ -225,6 +228,7 @@ public class UserInterface {
         while (addingSauces) {
             System.out.print("Enter your choice (0 when done): ");
             String choice = scanner.nextLine();
+
             switch (choice) {
                 case "1": pizza.addTopping(new Sauce("marinara")); break;
                 case "2": pizza.addTopping(new Sauce("alfredo")); break;
@@ -233,7 +237,7 @@ public class UserInterface {
                 case "5": pizza.addTopping(new Sauce("buffalo")); break;
                 case "6": pizza.addTopping(new Sauce("olive oil")); break;
                 case "0": addingSauces = false; break;
-                default: System.err.println("Invalid choice. Please try again.");
+                default: System.err.println("Invalid option. Please try again.");
             }
         }
 
@@ -247,11 +251,12 @@ public class UserInterface {
         while (addingSides) {
             System.out.print("Enter your choice (0 when done): ");
             String choice = scanner.nextLine();
+
             switch (choice) {
                 case "1": pizza.addTopping(new Side("red pepper")); break;
                 case "2": pizza.addTopping(new Side("parmesan")); break;
                 case "0": addingSides = false; break;
-                default: System.err.println("Invalid choice. Please try again.");
+                default: System.err.println("Invalid option. Please try again.");
             }
         }
 
@@ -260,22 +265,59 @@ public class UserInterface {
             System.out.println("Would you like stuffed crust?");
             System.out.println("1) Yes");
             System.out.println("2) No");
+
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
+
             if (choice.equals("1")) {
                 pizza.setStuffedCrust(true);
                 break;
             } else if (choice.equals("2")) {
                 break;
             } else {
-                System.err.println("Invalid choice. Please try again.");
+                System.err.println("Invalid option. Please try again.");
             }
         }
 
         order.addPizza(pizza);
         System.out.println("Pizza added successfully!");
     }
+
+    public void addDrink() {
+        // Select size
+        String size = "";
+        while (true) {
+            System.out.println("---------- Add Drink ----------");
+            System.out.println("Select size:");
+            System.out.println("1) Small");
+            System.out.println("2) Medium");
+            System.out.println("3) Large");
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            if (choice.equals("1")) {
+                size = "small";
+                break;
+            } else if (choice.equals("2")) {
+                size = "medium";
+                break;
+            } else if (choice.equals("3")) {
+                size = "large";
+                break;
+            } else {
+                System.err.println("Invalid option. Please try again.");
+            }
+        }
+
+        // Select flavor
+        System.out.print("Enter drink flavor: ");
+        String flavor = scanner.nextLine();
+
+        order.addDrink(new Drink(size, flavor));
+        System.out.println("Drink added successfully!");
     }
-
-
 }
+
+
+
