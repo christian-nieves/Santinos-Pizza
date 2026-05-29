@@ -75,7 +75,7 @@ public class ReceiptWriter {
                     bufferedWriter.write("  " + drink.getFlavor() + " (" + drink.getSize() + ") - $" + String.format("%.2f", drink.getPrice()));
                     bufferedWriter.newLine();
                 }
-                bufferedWriter.write(" -------------------------------------");
+                bufferedWriter.write("-------------------------------------");
                 bufferedWriter.newLine();
             }
 
