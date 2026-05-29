@@ -61,7 +61,7 @@ public class Pizza {
         // pizza price based on size
         double total = 0;
 
-        if (size.equalsIgnoreCase("personal")) {
+        if (size.equalsIgnoreCase("small")) {
             total = 8.50;
         } else if (size.equalsIgnoreCase("medium")) {
             total = 12.00;
@@ -72,7 +72,7 @@ public class Pizza {
         // add topping prices based on size
         int toppingAmount = 0;
 
-        if (size.equalsIgnoreCase("personal")) {
+        if (size.equalsIgnoreCase("small")) {
             toppingAmount = 8;
         } else if (size.equalsIgnoreCase("medium")) {
             toppingAmount = 12;

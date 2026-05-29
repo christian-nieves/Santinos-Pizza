@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -156,12 +159,54 @@ public class UserInterface {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1": pizza.addTopping(new Meat("pepperoni", false)); break;
-                case "2": pizza.addTopping(new Meat("sausage", false)); break;
-                case "3": pizza.addTopping(new Meat("ham", false)); break;
-                case "4": pizza.addTopping(new Meat("bacon", false)); break;
-                case "5": pizza.addTopping(new Meat("chicken", false)); break;
-                case "6": pizza.addTopping(new Meat("meatball", false)); break;
+                case "1":
+                    pizza.addTopping(new Meat("pepperoni", false));
+                    System.out.print("Would you like extra pepperoni? (yes/no): ");
+
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Meat("pepperoni", true));
+                    }
+                    break;
+                case "2":
+                    pizza.addTopping(new Meat("sausage", false));
+                    System.out.print("Would you like extra sausage? (yes/no): ");
+
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Meat("sausage", true));
+                    }
+                    break;
+                case "3":
+                    pizza.addTopping(new Meat("ham", false));
+                    System.out.print("Would you like extra ham? (yes/no): ");
+
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Meat("ham", true));
+                    }
+                    break;
+                case "4":
+                    pizza.addTopping(new Meat("bacon", false));
+                    System.out.print("Would you like extra bacon? (yes/no): ");
+
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Meat("bacon", true));
+                    }
+                    break;
+                case "5":
+                    pizza.addTopping(new Meat("chicken", false));
+                    System.out.print("Would you like extra chicken? (yes/no): ");
+
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Meat("chicken", true));
+                    }
+                    break;
+                case "6":
+                    pizza.addTopping(new Meat("meatball", false));
+                    System.out.print("Would you like extra meatball? (yes/no): ");
+
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Meat("meatball", true));
+                    }
+                    break;
                 case "0": addingMeats = false; break;
                 default: System.err.println("Invalid option. Please try again.");
             }
@@ -182,11 +227,41 @@ public class UserInterface {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1": pizza.addTopping(new Cheese("mozzarella", false)); break;
-                case "2": pizza.addTopping(new Cheese("parmesan", false)); break;
-                case "3": pizza.addTopping(new Cheese("ricotta", false)); break;
-                case "4": pizza.addTopping(new Cheese("goat cheese", false)); break;
-                case "5": pizza.addTopping(new Cheese("buffalo", false)); break;
+                case "1":
+                    pizza.addTopping(new Cheese("mozzarella", false));
+                    System.out.print("Would you like extra mozzarella? (yes/no): ");
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Cheese("mozzarella", true));
+                    }
+                    break;
+                case "2":
+                    pizza.addTopping(new Cheese("parmesan", false));
+                    System.out.print("Would you like extra parmesan? (yes/no): ");
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Cheese("parmesan", true));
+                    }
+                    break;
+                case "3":
+                    pizza.addTopping(new Cheese("ricotta", false));
+                    System.out.print("Would you like extra ricotta? (yes/no): ");
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Cheese("ricotta", true));
+                    }
+                    break;
+                case "4":
+                    pizza.addTopping(new Cheese("goat cheese", false));
+                    System.out.print("Would you like extra goat cheese? (yes/no): ");
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Cheese("goat cheese", true));
+                    }
+                    break;
+                case "5":
+                    pizza.addTopping(new Cheese("buffalo", false));
+                    System.out.print("Would you like extra buffalo? (yes/no): ");
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        pizza.addTopping(new Cheese("buffalo", true));
+                    }
+                    break;
                 case "0": addingCheese = false; break;
                 default: System.err.println("Invalid option. Please try again.");
             }
@@ -345,8 +420,20 @@ public class UserInterface {
 
         // Pizzas
         if (!order.getPizzas().isEmpty()) {
-            for (Pizza pizza : order.getPizzas()) {
-                System.out.println(pizza.toString());
+            List<Pizza> reversedPizzas = new ArrayList<>(order.getPizzas());
+            Collections.reverse(reversedPizzas);
+            for (Pizza pizza : reversedPizzas) {
+                System.out.println("Size:          " + pizza.getSize());
+                System.out.println("Crust:         " + pizza.getCrust());
+                System.out.println("Stuffed Crust: " + (pizza.getStuffedCrust() ? "Yes" : "No"));
+                System.out.print("Toppings:      ");
+                for (int i = 0; i < pizza.getToppings().size(); i++) {
+                    System.out.print(pizza.getToppings().get(i).getName());
+                    if (i < pizza.getToppings().size() - 1) {
+                        System.out.print(", ");
+                    }
+                }
+                System.out.println();
             }
         }
 
@@ -356,9 +443,13 @@ public class UserInterface {
                 System.out.println("Drink: " + order.getDrinks().get(0).getFlavor());
             } else {
                 System.out.print("Drinks: ");
-                for (Drink drink : order.getDrinks()) {
-                    System.out.print(drink.getFlavor() + " ");
+                for (int i = 0; i < order.getDrinks().size(); i++) {
+                    System.out.print(order.getDrinks().get(i).getFlavor());
+                    if (i < order.getDrinks().size() - 1) {
+                        System.out.print(", ");
+                    }
                 }
+
                 System.out.println();
             }
         }
