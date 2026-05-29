@@ -11,5 +11,4 @@ public class Side extends Topping {
         return 0; // sides are included/free
     }
 
-    public void
 }

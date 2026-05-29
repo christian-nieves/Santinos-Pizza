@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Topping {
+public abstract class Topping {
     private String name;
 
     // Constructor
@@ -20,6 +20,8 @@ public class Topping {
     // Method
     public abstract double getPrice(int toppingAmount);
 
-
-
+    @Override
+    public String toString() {
+        return name;
+    }
 }

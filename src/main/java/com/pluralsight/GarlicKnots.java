@@ -4,7 +4,7 @@ public class GarlicKnots {
     private double price;
 
     // Constructor
-    public GarlicKnots(double price) {
+    public GarlicKnots() {
         this.price = 1.50;
     }
 

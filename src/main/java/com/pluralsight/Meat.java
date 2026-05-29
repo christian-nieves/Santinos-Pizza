@@ -1,8 +1,8 @@
 package com.pluralsight;
 
 public class Meat extends PremiumTopping {
-    public Meat(String name, String cheeseOrMeat, boolean extraTopping) {
-        super(name, cheeseOrMeat, extraTopping);
+    public Meat(String name, boolean extraTopping) {
+        super(name, "meat", extraTopping);
     }
 
     // Method

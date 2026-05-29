@@ -11,7 +11,7 @@ public class Order {
     private LocalDateTime orderDate;
 
     // Constructor
-    public Order(List<Pizza> pizzas, List<Drink> drinks, List<GarlicKnots> garlicKnots, LocalDateTime orderDate) {
+    public Order() {
         this.pizzas = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.garlicKnots = new ArrayList<>();
