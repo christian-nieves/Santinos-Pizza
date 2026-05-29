@@ -5,20 +5,20 @@
 This Java console application is made for a user that wants to customize and purchase pizza. There are plenty of options and the pizza is completely customizable from the crust, size, toppings, and more!  
 ## User Stories
 
-- As a customer, I want to start a new order, so that I can begin customizing my pizza.
-- As a customer, I want to select a pizza size, so that I can choose the right size.
-- As a customer, I want to select a crust type, so that I can customize my pizza base.
-- As a customer, I want to add stuffed crust to my pizza, so that my pizza has a fuller crust.
-- As a customer, I want to add garlic knots to my order, so that I can get more food.
-- As a customer, I want to select a drink and its flavor, so that I can enjoy a drink with my food.
-- As a customer, I want to add toppings to my pizza, so that I can get more flavor.
-- As a customer, I want to review my order before checkout, so that I can make sure everything is correct.
-- As a customer, I want to see the total cost at checkout, so that I know how much I need to pay.
-- As a customer, I want a receipt of my order, so that I can have a record of my transactions.
-- As a customer, I want to purchase my order at checkout, so that I can start eating.
-- As a customer, I want to cancel my order, so that I can go back to the home screen.
-- As a customer, I want to purchase extra toppings, so that I can get more at an additional cost.
-- As a customer, I want to select a sauce, so that I can choose the flavor of my pizza.
+- As a user, I want to start a new order, so that I can begin customizing my pizza.
+- As a user, I want to select a pizza size, so that I can choose the right size.
+- As a user, I want to select a crust type, so that I can customize my pizza base.
+- As a user, I want to add stuffed crust to my pizza, so that my pizza has a fuller crust.
+- As a user, I want to add garlic knots to my order, so that I can get more food.
+- As a user, I want to select a drink and its flavor, so that I can enjoy a drink with my food.
+- As a user, I want to add toppings to my pizza, so that I can get more flavor.
+- As a user, I want to review my order before checkout, so that I can make sure everything is correct.
+- As a user, I want to see the total cost at checkout, so that I know how much I need to pay.
+- As a user, I want a receipt of my order, so that I can have a record of my transactions.
+- As a user, I want to purchase my order at checkout, so that I can start eating.
+- As a user, I want to cancel my order, so that I can go back to the home screen.
+- As a user, I want to purchase extra toppings, so that I can get more at an additional cost.
+- As a user, I want to select a sauce, so that I can choose the flavor of my pizza.
 
 ## Setup
 
