@@ -2,7 +2,7 @@
 
 ## Description of the Project
 
-This Java console application is made for a user that wants to customize and purchase pizza. There are plenty of options and the pizza is completely customizable from the crust, size, toppings, and more! 
+This Java console application is made for a user that wants to customize and purchase pizza. There are plenty of options and the pizza is completely customizable from the crust, size, toppings, and more!  
 ## User Stories
 
 - As a customer, I want to start a new order, so that I can begin customizing my pizza.
