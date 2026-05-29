@@ -6,6 +6,14 @@ public class UserInterface {
     private Order order;
     private Scanner scanner;
 
+    private static final String GREEN = "\u001B[92m";
+    public static final String BLUE = "\u001B[94m";
+    public static final String RED = "\u001B[91m";
+    public static final String ORANGE = "\u001B[38;5;208m";
+    public static final String YELLOW = "\u001B[93m";
+    private static final String RESET = "\u001B[0m";
+
+
     public UserInterface() {
         scanner = new Scanner(System.in);
     }
@@ -13,7 +21,10 @@ public class UserInterface {
     public void display() {
         boolean quit = false;
         while (!quit) {
-            System.out.println("========== WELCOME TO SANTINO'S PIZZA ==========");
+            System.out.println(GREEN + "╔══════════════════════════════════╗");
+            System.out.println(GREEN + "║     WELCOME TO SANTINO'S PIZZA   ║");
+            System.out.println(GREEN + "╚══════════════════════════════════╝" + RESET);
+
             System.out.println("1) New Order");
             System.out.println("0) Exit");
 
@@ -38,7 +49,7 @@ public class UserInterface {
         boolean quit = false;
 
         while (!quit) {
-            System.out.println("---------- Order Screen ----------");
+            System.out.println(BLUE + "========== Order Screen ==========" + RESET);
             System.out.println("1) Add Pizza");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Garlic Knots");
@@ -59,7 +70,7 @@ public class UserInterface {
                     addGarlicKnots();
                     break;
                 case "4":
-
+                    checkOutScreen();
                     break;
                 case "0":
                     System.out.println("Order Cancelled.");
@@ -76,7 +87,7 @@ public class UserInterface {
         // Select size
         String size = "";
         while (true) {
-            System.out.println("---------- Add Pizza ----------");
+            System.out.println(RED + "========== Add Pizza ==========" + RESET);
             System.out.println("Select size: ");
             System.out.println("1) Small 8\"");
             System.out.println("2) Medium 12\"");
@@ -101,7 +112,7 @@ public class UserInterface {
         // Select crust
         String crust = "";
         while (true) {
-            System.out.println("Select crust:");
+            System.out.println(ORANGE +"---------- Select Crust ----------" + RESET);
             System.out.println("1) Thin");
             System.out.println("2) Regular");
             System.out.println("3) Thick");
@@ -130,7 +141,7 @@ public class UserInterface {
         Pizza pizza = new Pizza(size, crust, false);
 
         // Select meats
-        System.out.println("---------- Select Meats ----------");
+        System.out.println(ORANGE + "---------- Select Meats ----------" + RESET);
         System.out.println("1) Pepperoni");
         System.out.println("2) Sausage");
         System.out.println("3) Ham");
@@ -157,7 +168,7 @@ public class UserInterface {
         }
 
         // Select cheese
-        System.out.println("---------- Select Cheese ----------");
+        System.out.println(ORANGE + "---------- Select Cheese ----------" + RESET);
         System.out.println("1) Mozzarella");
         System.out.println("2) Parmesan");
         System.out.println("3) Ricotta");
@@ -182,7 +193,7 @@ public class UserInterface {
         }
 
         // Select regular toppings
-        System.out.println("---------- Select Toppings ----------");
+        System.out.println(ORANGE + "---------- Select Toppings ----------" + RESET);
         System.out.println("1) Onions");
         System.out.println("2) Mushrooms");
         System.out.println("3) Bell Peppers");
@@ -215,7 +226,7 @@ public class UserInterface {
         }
 
         // Select sauces
-        System.out.println("---------- Select Sauce ----------");
+        System.out.println(ORANGE + "---------- Select Sauce ----------" + RESET);
         System.out.println("1) Marinara");
         System.out.println("2) Alfredo");
         System.out.println("3) Pesto");
@@ -242,7 +253,7 @@ public class UserInterface {
         }
 
         // Select sides
-        System.out.println("---------- Select Sides ----------");
+        System.out.println(ORANGE + "---------- Select Sides ----------" + RESET);
         System.out.println("1) Red Pepper");
         System.out.println("2) Parmesan");
         System.out.println("0) Done");
@@ -287,7 +298,7 @@ public class UserInterface {
         // Select size
         String size = "";
         while (true) {
-            System.out.println("---------- Add Drink ----------");
+            System.out.println(YELLOW + "========== Add Drink ==========" + RESET);
             System.out.println("Select size:");
             System.out.println("1) Small");
             System.out.println("2) Medium");
