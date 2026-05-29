@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.toppings;
 
 public class Cheese extends PremiumTopping {
     public Cheese(String name, boolean extraTopping) {

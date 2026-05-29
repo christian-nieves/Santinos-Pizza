@@ -1,4 +1,9 @@
-package com.pluralsight;
+package com.pluralsight.ui;
+
+import com.pluralsight.food.Drink;
+import com.pluralsight.food.Order;
+import com.pluralsight.food.Pizza;
+import com.pluralsight.toppings.Topping;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,4 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.side;
+
+import com.pluralsight.toppings.Topping;
 
 public class Side extends Topping {
     public Side(String name) {

@@ -1,4 +1,14 @@
-package com.pluralsight;
+package com.pluralsight.ui;
+
+import com.pluralsight.food.Drink;
+import com.pluralsight.food.GarlicKnots;
+import com.pluralsight.food.Order;
+import com.pluralsight.food.Pizza;
+import com.pluralsight.side.Sauce;
+import com.pluralsight.side.Side;
+import com.pluralsight.toppings.Cheese;
+import com.pluralsight.toppings.Meat;
+import com.pluralsight.toppings.RegularTopping;
 
 import java.util.ArrayList;
 import java.util.Collections;

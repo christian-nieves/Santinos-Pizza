@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.ui;
 
 public class SantinosPizza {
     public static void main(String[] args) {

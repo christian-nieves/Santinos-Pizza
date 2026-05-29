@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.food;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
