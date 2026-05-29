@@ -317,6 +317,11 @@ public class UserInterface {
         order.addDrink(new Drink(size, flavor));
         System.out.println("Drink added successfully!");
     }
+
+    public void addGarlicKnots() {
+        order.addGarlicKnots(new GarlicKnots());
+        System.out.println("Garlic Knots added successfully!");
+    }
 }
 
 
